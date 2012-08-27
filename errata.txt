@@ -1,0 +1,52 @@
+On page 21:
+ephemeral range in linux as described is inaccurate, check /proc/sys/net/ipv4/ip_local_port_range
+
+On page 21:
+says that client uses recv instead of recvfrom, but code listing in book says otherwise.
+On page 21:
+Note that the Python program can always use a socket's getsockname() method to retrieve the current IP and port to which the socket is bound.
+
+Warning: As documented here: http://bugs.python.org/issue1049
+
+The behavior and return value for calling socket.socket.getsockname() on 
+an unconnected unbound socket is unspecified. On UNIX, it returns an 
+address ('0.0.0.0', 0), while on Windows it raises an obscure exception 
+"error: (10022, 'Invalid argument')".
+On page 26:
+
+The first code listing:
+
+>>> import socket
+>>> s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+>>> s.sendto('Fake reply', ('127.0.0.1', 47873))
+
+The indentation for the second line appears wrong. It looks like there is whitespace before the "s =", when there shouldn't be.
+
+On page 68:
+
+script dns_mx.py resolves the hostname of all the mx records to the same IP address.
+In resolve_hostname "name = sys.argv[1]"should be changed to "name = hostname"
+
+On page 73:
+
+Instead of being stored as four decimal digits 4, 4, 2, and 3 with ...
+
+should be:
+
+Instead of being stored as four decimal digits 4, 2, 5, and 3 with ...
+
+On page 122:
+
+(from the queue module)
+
+should be:
+
+(from the Queue module)
+
+note the capital Q
+
+On page 243:
+"remove" should be "remote" in:
+
+"A locally stored message can be uploaded directly to one of the remove folders"
+
